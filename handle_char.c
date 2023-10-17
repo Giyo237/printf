@@ -3,7 +3,7 @@
 #include <stdarg.h>
 /**
 * handle_char - function that checks for characters
-*@args: the argument
+*@tse: the argument
 *@count:the string counter
 */
 void handle_char(va_list tse, int *count)

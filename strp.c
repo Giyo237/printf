@@ -10,11 +10,14 @@ int print_str(char *s)
 {
 	int count = 0;
 
-	while(*s)
+	while (*s)
 	{
+		if (*s != '\0')
+		{
 		write(STDOUT_FILENO, s, 1);
-		s++;
 		count++;
+		}
+		s++;
 	}
 	return (count);
 }

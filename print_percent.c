@@ -4,6 +4,7 @@
 /**
 * print_percent - function that handles the %
 * @count: number of characters printed
+* Return:count
 */
 int print_percent(int *count)
 {
