@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stdio.h>
+#include <unistd.h>
 /**
  * _printf - function that mimics the printf function
  * @format: format specifier checker
@@ -21,13 +22,13 @@ int _printf(const char *format, ...)
 			format++;
 		if (*format == '%')
 		{
-			putchar('%');
+			write(1, "%", 1);
 			c++;
 		}
 		else if (*format == 'c')
 		{
 		ch = (char) va_arg(tse, int);
-		putchar(ch);
+		write(1, &ch, 1);
 			c++;
 		}
 		else if (*format == 's')
@@ -35,7 +36,7 @@ int _printf(const char *format, ...)
 			str = va_arg(tse, char *);
 			while (*str)
 			{
-				putchar(*str);
+				write(1, str, 1);
 				str++;
 				c++;
 			}
@@ -43,7 +44,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			putchar(*format);
+			write(1,format,1);
 			c++;
 		}
 		format++;
