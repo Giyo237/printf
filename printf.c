@@ -29,7 +29,7 @@ while (*ptr)
 		handle_str(tse, &count);
 		break;
 	case '%':
-		print_percent(&count);
+		count += print_percent(&count);
 		break;
 	default:
 		break;
@@ -37,7 +37,7 @@ while (*ptr)
 	}
 	else
 	{
-		print_char(*ptr, &count);
+		count += print_char(*ptr);
 	}
 	ptr++;
 }

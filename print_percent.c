@@ -5,7 +5,8 @@
 * print_percent - function that handles the %
 * @count: number of characters printed
 */
-void print_percent(int *count)
+int print_percent(int *count)
 {
-	print_char('%', count);
+	count += print_char('%');
+	return (*count);
 }

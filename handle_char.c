@@ -2,14 +2,12 @@
 #include <unistd.h>
 #include <stdarg.h>
 /**
-* handle_char - a function that handles the char
-*@tse: argument
-*@count: number of character
+* handle_char - function that checks for characters
+*@args: the argument
+*@count:the string counter
 */
 void handle_char(va_list tse, int *count)
 {
-	char c;
-
-	c = va_arg(tse, int);
-	print_char(c, count);
+	char c = va_arg(tse, int);
+	*count += print_char(c);
 }
