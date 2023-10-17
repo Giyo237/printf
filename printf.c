@@ -1,54 +1,46 @@
 #include "main.h"
-#include <stdarg.h>
-#include <stdio.h>
 #include <unistd.h>
+#include <stdarg.h>
 /**
- * _printf - function that mimics the printf function
- * @format: format specifier checker
- * @...: The variable number of args
- * Return: count or number of characters printed
- */
+* _printf - function that mimics printf
+* @format: specifier cchecker
+* @..:variable number of arguments
+*Return: number of charaters printed
+*/
 int _printf(const char *format, ...)
 {
-	int c = 0, ch;
+	int count;
+	const char *ptr = format;
+
 	va_list tse;
-	char *str;
 
 	va_start(tse, format);
-	while (*format)
+while (*ptr)
+{
+	if (*ptr == '%')
 	{
-		if (*format == '%')
-		{
-			format++;
-		if (*format == '%')
-		{
-			write(1, "%", 1);
-			c++;
-		}
-		else if (*format == 'c')
-		{
-		ch = (char) va_arg(tse, int);
-		write(1, &ch, 1);
-			c++;
-		}
-		else if (*format == 's')
-		{
-			str = va_arg(tse, char *);
-			while (*str)
-			{
-				write(1, str, 1);
-				str++;
-				c++;
-			}
-		}
-		}
-		else
-		{
-			write(1,format,1);
-			c++;
-		}
-		format++;
+		ptr++;
+	switch (*ptr)
+	{
+	case 'c':
+		handle_char(tse, &count);
+		break;
+	case 's':
+		handle_str(tse, &count);
+		break;
+	case '%':
+		print_percent(&count);
+		break;
+	default:
+		break;
 	}
-	va_end(tse);
-	return (c);
+	}
+	else
+	{
+		print_char(*ptr, &count);
+	}
+	ptr++;
+}
+va_end(tse);
+return (count);
 }
