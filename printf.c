@@ -42,8 +42,10 @@ int _printf(const char *format, ...)
 		}
 		}
 		else
+		{
 			putchar(*format);
 			c++;
+		}
 		format++;
 	}
 	va_end(tse);
