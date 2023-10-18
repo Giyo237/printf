@@ -15,10 +15,6 @@ int handle_bin(va_list tse, int *count)
 
 	int num = va_arg(tse, int);
 
-	if (num < 0)
-	{
-		num = -num;
-	}
 	print_bin(num);
 
 	while (t > 0)
