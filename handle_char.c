@@ -9,5 +9,5 @@
 void handle_char(va_list tse, int *count)
 {
 	char c = va_arg(tse, int);
-	*count += print_char(c);
+	*count += (print_char(c));
 }
