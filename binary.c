@@ -9,7 +9,7 @@ void print_bin(unsigned int n)
 {
 
 
-	if (n > 0)
+	if (n > 1)
 	{
 		print_bin(n / 2);
 	}
