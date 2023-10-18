@@ -17,7 +17,7 @@ int handle_bin(va_list tse, int *count)
 
 	print_bin(num);
 
-	while (t > 0)
+	while (t != 0)
 	{
 		len++;
 		t /= 2;
