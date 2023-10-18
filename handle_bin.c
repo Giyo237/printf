@@ -11,27 +11,27 @@
 int handle_bin(va_list tse, int *count)
 {
 	int len = 0;
+	char i;
+	int t;
 
-	unsigned int t;
+	int num = va_arg(tse, int);
 
-	unsigned int num = va_arg(tse, unsigned int);
-
-	print_bin(num);
-	t = num;
-	if (t <= 0)
+	if (num < 0)
 	{
-		return (-1);
+		print_char('1');
+		num = -num;
 	}
+	for (i = 0; i < 'z'; i++);
+	if (num  > i)
+		return (-1);
+	print_bin(num);
 
-	else
-	{
 	while (t > 0)
 	{
 		len++;
 		t /= 2;
 	}
 	*count += len;
-	}
 	return (*count);
 }
 
