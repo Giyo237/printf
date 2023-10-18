@@ -7,7 +7,7 @@
 */
 void print_bin(unsigned int n)
 {
-	
+
 
 	if (n > 1)
 	{
