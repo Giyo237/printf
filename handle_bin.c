@@ -17,7 +17,6 @@ int handle_bin(va_list tse, int *count)
 
 	if (num < 0)
 	{
-		print_char('-');
 		num = -num;
 	}
 	print_bin(num);
