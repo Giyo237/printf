@@ -35,6 +35,9 @@ while (*ptr)
 	case 'i':
 		handle_int(tse, &count);
 		break;
+	case 'b':
+		handle_bin(tse, &count);
+		break;
 	default:
 		break;
 	}
