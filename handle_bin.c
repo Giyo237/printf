@@ -8,7 +8,7 @@
 *@count:character counter
 *Return: count
 */
-int handle_bin(va_list tse, int *count)
+void handle_bin(va_list tse, int *count)
 {
 	int len = 0;
 	unsigned int t;
@@ -22,7 +22,6 @@ int handle_bin(va_list tse, int *count)
 		t /= 2;
 	}
 	*count += len;
-	return (*count);
 }
 
 
