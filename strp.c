@@ -12,9 +12,12 @@ int print_str(char *s)
 
 	while (*s)
 	{
+		if (*s != '\0')
+		{
 		write(STDOUT_FILENO, s, 1);
 		s++;
 		count++;
+		}
 	}
 	return (count);
 }

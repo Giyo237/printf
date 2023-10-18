@@ -4,7 +4,7 @@
 /**
 *handle_str - funtion that checks for strings
 *@tse:argument
-*@count: charactoer counter
+*@count: character counter
 */
 void handle_str(va_list tse, int *count)
 {
