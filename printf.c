@@ -1,5 +1,4 @@
 #include "main.h"
-#include <unistd.h>
 #include <stdarg.h>
 /**
 * _printf - function that mimics printf
@@ -11,7 +10,6 @@ int _printf(const char *format, ...)
 {
 	int count = 0;
 	const char *ptr = format;
-
 	va_list tse;
 
 	va_start(tse, format);
