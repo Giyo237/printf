@@ -10,13 +10,11 @@
 */
 int handle_bin(va_list tse, int *count)
 {
-	unsigned int len = 0;
+	int len = 0;
 	unsigned int t;
 
 	unsigned int num = va_arg(tse, int);
-
 	print_bin(num);
-
 	while (t != 0)
 	{
 		len++;
