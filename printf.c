@@ -36,6 +36,9 @@ while (*ptr)
 	case 'b':
 		handle_bin(tse, &count);
 		break;
+	case 'u':
+		handle_unsigned(tse, &count);
+		break;
 	default:
 		break;
 	}
