@@ -6,8 +6,10 @@
 * @count: number of characters printed
 * Return:count
 */
-int print_percent(int *count)
+int print_percent(const  char *format, int *count)
 {
-	count += print_char('%');
+	print_char('%');
+	print_char(*format);
+	*count += 2;
 	return (*count);
 }

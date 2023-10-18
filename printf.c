@@ -27,7 +27,7 @@ while (*ptr)
 		handle_str(tse, &count);
 		break;
 	case '%':
-		print_percent(&count);
+		print_percent(format, &count);
 		break;
 	case 'd':
 	case 'i':

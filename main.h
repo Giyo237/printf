@@ -12,7 +12,7 @@ void handle_unsigned(va_list tse, int *count);
 void handle_bin(va_list tse, int *count);
 void print_bin(unsigned int n);
 void handle_int(va_list tse, int *count);
-int print_percent(int *count);
+int print_percent(const char *format, int *count);
 void handle_str(va_list tse, int *count);
 void handle_char(va_list tse, int *count);
 
