@@ -1,6 +1,7 @@
 #include "main.h"
 #include <unistd.h>
 #include <stdarg.h>
+#include <stdio.h>
 /**
 * handle_bin - function that handles binary
 * @tse:argument
@@ -17,12 +18,20 @@ int handle_bin(va_list tse, int *count)
 
 	print_bin(num);
 	t = num;
-	while (t != 0)
+	if (num <= 0)
+	{
+		return (-1);
+	}
+
+	else
+	{
+	while (t >= 0)
 	{
 		len++;
 		t /= 2;
 	}
 	*count += len;
+	}
 	return (*count);
 }
 
