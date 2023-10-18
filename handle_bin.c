@@ -18,14 +18,14 @@ int handle_bin(va_list tse, int *count)
 
 	print_bin(num);
 	t = num;
-	if (num <= 0)
+	if (t <= 0)
 	{
 		return (-1);
 	}
 
 	else
 	{
-	while (t >= 0)
+	while (t > 0)
 	{
 		len++;
 		t /= 2;
