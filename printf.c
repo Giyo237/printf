@@ -9,7 +9,7 @@
 */
 int _printf(const char *format, ...)
 {
-	int count;
+	int count = 0;
 	const char *ptr = format;
 
 	va_list tse;
@@ -29,7 +29,11 @@ while (*ptr)
 		handle_str(tse, &count);
 		break;
 	case '%':
-		count += print_percent(&count);
+		print_percent(&count);
+		break;
+	case 'd':
+	case 'i':
+		handle_int(tse, &count);
 		break;
 	default:
 		break;
